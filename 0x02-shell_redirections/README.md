@@ -1,0 +1,1 @@
+This scripts in this folder are for shell redirections and filters
