@@ -1,0 +1,21 @@
+total 72
+drwxr-xr-x 2 root root 4096 Dec  5 18:38 .
+drwxr-xr-x 6 root root  121 Dec  5 16:10 ..
+-rwxr--r-- 1 root root   37 Dec  5 17:00 0-hello_world
+-rwxr--r-- 1 root root   32 Dec  5 16:15 0-hello_world~
+-rwxr--r-- 1 root root   28 Dec  5 17:06 1-confused_smiley
+-rwxr--r-- 1 root root   28 Dec  5 17:13 2-hellofile
+-rwxr--r-- 1 root root   39 Dec  5 17:19 3-twofiles
+-rwxr--r-- 1 root root   29 Dec  5 17:24 4-lastlines
+-rwxr--r-- 1 root root   29 Dec  5 17:26 5-firstlines
+-rwxr--r-- 1 root root   50 Dec  5 17:38 6-third_line
+-rwxr--r-- 1 root root  100 Dec  5 18:30 7-file
+-rwxr--r-- 1 root root   98 Dec  5 18:28 7-file~
+-rwxr--r-- 1 root root   36 Dec  5 18:38 8-cwd_state
+-rwxr--r-- 1 root root   42 Dec  5 18:37 8-cwd_state~
+-rw-r--r-- 1 root root   12 Dec  5 18:30 \*\\'"Best School"\'\\*$\?\*\*\*\*\*:)
+-rw-r--r-- 1 root root   12 Dec  5 18:28 \*\\'Best\ School\'\\*$\?\*\*\*\*\*:)
+-rw-r--r-- 1 root root   12 Dec  5 18:25 \*\\\\"Best\ School\"\\\\\\*$\?\*\*\*\*\*:)
+-rw-r--r-- 1 root root   12 Dec  5 18:17 \\\\\"Best\ School\"\\\\\\$\?\\\\\\\*:)
+-rwxr--r-- 1 root root   24 Dec  5 17:16 givePerm
+-rw-r--r-- 1 root root    0 Dec  5 18:38 ls_cwd_content
