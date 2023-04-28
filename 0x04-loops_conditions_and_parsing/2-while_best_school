@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# This script is displaying "Best School" 10 times usinng
+#+ using a while loop
+
+LIMIT=10
+add=0
+while [ "$add" -lt "$LIMIT" ];
+do
+    echo -e "Best School";
+    add=$((add + 1))
+done
+exit 0
