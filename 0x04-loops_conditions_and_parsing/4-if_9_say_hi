@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# This script is displaying "Best School" 10 times usinng
+#+ using a for loop and print "Hi" on the 9th print
+
+LIMIT=10
+add=0
+while [ "$add" -lt "$LIMIT" ];
+do
+    echo "Best School";
+    ((add++))
+    if ((add == 9))
+    then
+	echo "Hi"
+    fi
+done
+exit 0
