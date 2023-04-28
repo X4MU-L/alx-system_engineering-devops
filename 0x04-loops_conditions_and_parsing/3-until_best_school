@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# This script is displaying "Best School" 10 times usinng
+#+ using a until loop
+
+count=0
+until [ "$count" -ge 10 ];
+do
+    echo -e "Best School";
+    ((count++))
+done
+exit 0
