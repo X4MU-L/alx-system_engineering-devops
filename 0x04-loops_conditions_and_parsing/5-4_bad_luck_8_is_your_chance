@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+# This script displays:
+# "bad luck" for the 4th loop iteration
+# "good luck" for the 8th loop iteration
+# "Best School" for the other iterations
+
+LIMIT=10
+add=1
+while [ "$add" -le "$LIMIT" ];
+do
+    if ((add == 4))
+    then
+	echo "bad luck"
+    elif ((add == 5))
+    then
+	echo "good luck"
+    else
+	echo "Best School";
+    fi
+    ((add++))
+done
+exit 0
