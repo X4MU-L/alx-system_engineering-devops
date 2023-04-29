@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# This script is displays the PID of the script itself
+
+echo "$$"
+
+exit 0
