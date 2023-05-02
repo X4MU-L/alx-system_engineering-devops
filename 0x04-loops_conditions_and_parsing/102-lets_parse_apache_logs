@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# this script displays:
+# the IP address and HTTPS status of a request from a log file
+
+awk '{print $1, $9}' "apache-access.log"
