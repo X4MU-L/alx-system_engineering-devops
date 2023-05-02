@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# This script displays the content of the file /etc/passwd:
+# script displays:
+# The user USERNAME is part of the GROUP_ID gang, lives in HOME_DIRECTORY and
+#+ rides COMMAND/SHELL. USER ID's place is protected by the passcode PASSWORD,
+#+ more info about the user here: USER ID INFO
+
+file="/etc/passwd"
+while IFS=: read -r user pw userID groupID userInfo home shell;
+do
+    echo -n "The user $user is part of the $groupID gang, lives in $home "
+    echo -n "and rides $shell. $userID's place is protected by the passcode "
+    echo "$pw, more info about the user here: $userInfo"
+done < $file
+exit 0
