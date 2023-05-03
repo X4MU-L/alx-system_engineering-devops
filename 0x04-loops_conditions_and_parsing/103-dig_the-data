@@ -4,7 +4,8 @@
 # The exact forma is:
 # OCCURENCE_NUMBER IP HTTP_CODE
 # Ordered from the greatest to the lowest number of occurrences
-
- awk '{if (array[$1,$9]) array[$1,$9]++; else array[$1,$9] = 1;}
- END {for (i in array) print array[i], substr(i, 1, length(i) - 4),
-substr(i, length(i) - 2, length(i)) | "sort -nr "}' apache-access.log
+# previous implementation
+# awk '{if (array[$1,$9]) array[$1,$9]++; else array[$1,$9] = 1;}
+# END {for (i in array) print array[i], substr(i, 1, length(i) - 4),
+# substr(i, length(i) - 2, length(i)) | "sort -nr "}' apache-access.log
+awk '{print $1, $9}' apache-access.log | sort | uniq -c | sort -nr
