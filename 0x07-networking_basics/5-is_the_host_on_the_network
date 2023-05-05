@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# this script takes in a hostname and pings it 5 times
+ping -c 5 "$1"
