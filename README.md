@@ -1,1 +1,1 @@
-# This repo was created for alx shell basics
+# 0x07. Networking basics #0
