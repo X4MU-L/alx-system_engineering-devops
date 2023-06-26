@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+# sign in to a server using ssh with file ~/.ssh/school at ubuntu@8.8.8.8
+
+ssh -i ~/.ssh/school ubuntu@8.8.8.8
