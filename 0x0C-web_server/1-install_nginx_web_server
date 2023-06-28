@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# install nginx on a server and return "hello world" from root page
+
+# install nginx and use -y for yes to prompts
+apt-get update -y
+apt-get install nginx -y
+
+echo "Hello World!" | tee var/www/html/*
+
+# allow http on port 80
+ufw allow "Nginx HTTP"
+
+#restart nginx
+service restart nginx
