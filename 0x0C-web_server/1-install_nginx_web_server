@@ -10,5 +10,5 @@ echo "Hello World!" | tee var/www/html/*
 # allow http on port 80
 ufw allow "Nginx HTTP"
 
-#restart nginx
-service restart nginx
+# restart nginx
+service nginx restart
