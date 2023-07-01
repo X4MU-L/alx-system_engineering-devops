@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-
+# configures a server to rediret a uri and with responce of 301
 mv /etc/nginx/sites-enabled/default /etc/nginx/
 
 echo "
