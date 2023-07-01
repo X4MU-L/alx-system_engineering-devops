@@ -12,9 +12,7 @@ echo "
 	index index.html index.htm;
 
 	location /redirect_me {
-		 if (\$uri = \"redirect_me\") {
-		    	   return 301 \$request_uri;
-		}
+		return 301 www.google.com;
 	}
 
 	location / {
