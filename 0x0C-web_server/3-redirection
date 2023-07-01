@@ -12,15 +12,15 @@ echo "
 	index index.html index.htm;
 
 	location /redirect_me {
-		 if (\$uri = "/redirect_me") {
-		    	   return 301 $request_uri;
+		 if (\$uri = \"redirect_me\") {
+		    	   return 301 \$request_uri;
 		}
 	}
 
 	location / {
 		# FIRST ATTEMPT TO SERVE REQUEST AS FILE, THEN
 		# as directory, then fall back to displaying a 404.
-		try_files $uri $uri/ =404;
+		try_files \$uri \$uri/ =404;
 	}
 
 }
