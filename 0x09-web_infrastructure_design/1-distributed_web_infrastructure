@@ -1,0 +1,18 @@
+Concepts and Knowledge gained
+
+- To allow for data integrity and separation of concerns, only the application server can transact with the database direct.
+
+- My load balancer is implemented to use a Round robin algorithm.
+
+- This design did not implement Primary-Replica (Master-Slave) for the database, nor does our data have any backup, This can be seen as a SPOF, should our database gets overloaded or fails for any reason.
+
+- This cluster also uses an Active-Active High availability Solution this also helps improve scalability, since no monitoring mechanism is currently employed I believe this would best serve the custer instead of an Active-Passive High availability Solution.
+
+- There is also no Firewall on this cluster and makes prone to DOS attacks.
+
+- We currently have one application server serving both servers with no backup, this can be identified as another SPOF.
+
+
+
+The web stack whiteboard design can be accessed here
+https://imgur.com/gallery/44FGDWM

@@ -1,1 +1,30 @@
-https://docs.google.com/document/d/1Kjl2cNJqtb0kRGGxdRBNZwyHuEkiYrkyoWXzzUi0QPc/edit?usp=sharing
+1 What is a server
+
+A server is a computer or system designed to serve resources, services or functionality over a network to other computers, referred to as clients.
+
+
+2. What is the role of the domain name
+
+Domain names are used to map IP addresses to a human readable strings for easy identification.
+
+3. What type of DNS record www is in www.foobar.com
+www is a subdomain of foobar.com and also www.foobar.com will be created as a CNAME that resolves to the IP address of foobar.com in the DNS.
+
+4. What is the role of the web server
+the role of the web server is to server static or dynamic web pages or return appropriate error where not possible to the client.
+
+5. What is the role of the application server
+The role of application servers is to implement the business logic of a server.. e.g a server may want to generate a dynamic responces of all it's product currently on promo and if such funcion has been created as a business logic using application servers, the server will direct the request to the appropriate application and return the generated web page to the client.
+
+6. What is the role of the database
+A database is used for storing, managing, and organising large amount of data effectively for easy retrival and manipulation while maintaining data integrity.
+
+7. What is the server using to communicate with the computer of the user requesting the website
+The server communicates with the computer/client over an internet protocol HTTP/HTTPS designed for easy communication between 2 computers over a network.
+
+8. SPOF
+SPOF means single point of failure - this is point or part of system that if a failure occured would affevt the whole system.
+
+
+The web stack whiteboard design can be accessed here
+https://imgur.com/gallery/44FGDWM

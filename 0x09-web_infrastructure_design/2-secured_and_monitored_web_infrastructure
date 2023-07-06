@@ -1,0 +1,63 @@
+Question:
+For every additional element, why you are adding it?
+
+FIREWALL: I have added 3 firewall, one at the load balancer, adding a firewall at the load balancer helps to filter and monitor incoming request, preventing malicious and unauthorized access, thereby helping us detect and mitigate DDOS attacks, a flaw in our previous design.
+Having a firewall at the server level adds an application level-protection and internal network security, we can implement and only allow access to specific port of our choosing, further more restrict communications between the inner infrastructure within the web cluster only allowing access from the load balancer as means of allowing requests into the cluster. with the above implementation we are able to create defence-in-depth strategy.
+
+MONITORING: We have also added 3 monitoring tools, at the load balancer level helps us monitor ist health and performance, we can monitor key metrics like CPU usage, network throughput, error rates and it's responsiveness and uptime and possibly detect any metrics that may cause it's failure and same goes with monitoring each server.
+
+1 SSL Certificate: 1 SSL Certificte is added to secure the HTTP protocol and encrypt the communication, making the transfer of data between the server and the client more secure.
+
+SECONDARY SERVER: The secondary server is on standby and will replace any of our two servers should we have a failure or downtime on any of them.
+
+Question:
+What are firewalls for?
+
+A firewall is a network security device or software application that helps protect computer networks from unauthorized access and malicious activities. It acts as a barrier or a filter between an internal network and external networks, such as the internet, controlling the flow of network traffic based on predetermined security rules.
+
+
+Question:
+Why is the traffic served over HTTPS?
+
+The traffic is served over a HTTPS to encrypt the communication between the server and the client, making the communication more secure.
+
+Question:
+What monitoring is used for?
+
+Monitoring is used to get an up to date accessment and insights of our system conditions, health, performance and security to help the system administrators make crucial decisions.
+
+
+Question:
+How the monitoring tool is collecting data?
+
+- Log-based Monitoring
+- Agent-based Monitorig
+- Flow-based Monitoring
+
+Question:
+Explain what to do if you want to monitor your web server QPS?
+
+- Select a monitoring tool
+- Install and configure the monitoring tool
+- Define QPS Metrics
+- Vitualize and analyze the data.
+
+Question:
+Why terminating SSL at the load balancer level is an issue?
+
+SECURITY: Decrypting the HTTPS traffic at the load balancer can pose a security risk as the data transferred to the backen server happens over an unencrypted network which can as well be intercepted by unauthorized individuals thereby defeating the initial goal of communicating over a secure.
+
+TRUST AND AUTHENTICATION: When SSL termination happens at the load balancer, the client establishes an SSL connection with the load balancer, without being aware of the backend server. This can lead to challenges in maintaining proper trust and identity verification, as the client is unaware of the backend server's identity. To mitigate this, additional steps must be taken, such as configuring the load balancer to pass client certificates to the backend servers for authentication.
+
+PERFORMANCE: SSL encryption/decryption requires computational resources. By terminating SSL at the load balancer, the decryption workload is centralized, relieving the backend servers from performing this task. However, the load balancer now has to handle the SSL termination for all incoming requests, which can increase its processing load and potentially impact its performance.
+
+Question:
+Why having only one MySQL server capable of accepting writes is an issue?
+
+Single Point Of Failure (SPOF): If the single MySQL server fails or becomes unreachable, there will be no other server available to handle write operations. This can result in downtime, data loss, and service disruptions.
+
+LImited Throughput: With only one MySQL server accepting writes, you are limited to the processing power and resources of that particular server. As a result, the maximum write throughput achievable is constrained by the capabilities of that single server.
+
+
+Link to the Web Infrastructure Design Here:
+https://imgur.com/gallery/sxBHVK9
