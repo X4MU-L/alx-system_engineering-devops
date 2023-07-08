@@ -1,7 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <sys/wait.h>
 #include <unistd.h>
 
+/**
+ * infinite_while - Loops indefinitely, pauses for one second between
+ *                  each iteration.
+ * Return: always 0
+ */
 
 int infinite_while(void)
 {
@@ -11,6 +17,11 @@ int infinite_while(void)
 	}
 	return (0);
 }
+
+/**
+ * main - Entry point to the program.
+ * Return: Always 0
+ */
 
 int main(void)
 {
