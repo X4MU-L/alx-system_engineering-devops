@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 # this script
 # changes facebook IP and Local host IP in the Host file
-cp /etc/hosts /etc/host.new
-sed -i 's/127.0.0.1/127.0.0.2/g; s/157.240.11.35/8.8.8.8/g' /etc/host.new
-cat /etc/host.new > /etc/hosts
+#   1) localhost resolves to 127.0.0.2
+#   2) facebook.com resolves to 8.8.8.8.
+
+cp /etc/hosts ~/hosts.new
+sed -i 's/^127.*localhost$/127.0.0.2 localhost/g' ~/hosts.new
+echo "8.8.8.8 facebook.com" | tee -a ~/hosts.new > /dev/null
+cp -f ~/hosts.new /etc/hosts
