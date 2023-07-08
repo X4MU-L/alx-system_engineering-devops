@@ -1,5 +1,6 @@
 # install flask app using pip3
 package { 'Flask':
-  ensure   => 'installed'
-  provider => 'pip3'
+  ensure   => '2.1.0',
+  name     => 'flask',
+  provider => 'pip3',
 }

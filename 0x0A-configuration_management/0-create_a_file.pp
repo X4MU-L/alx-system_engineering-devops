@@ -1,7 +1,7 @@
 # create a file scholl in the /tmp folder
 file { 'school':
-  path    => '/tmp/school'
   ensure  => 'present'
+  path    => '/tmp/school'
   mode    => '0744'
   owner   => 'www-data'
   group   => 'www-data'
