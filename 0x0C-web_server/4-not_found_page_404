@@ -1,0 +1,40 @@
+#!/usr/bin/env bash
+# configures a server to rediret a uri and with responce of 301
+# update machine and install nginx
+apt-get update -y > /dev/null 2>&1
+apt-get install nginx -y /dev/null 2>&1
+
+# update default html file that comes with nginx
+echo "Hello World!" | tee /var/www/html/index.html > /dev/null 2>&1
+echo "Ceci n'est pas une page" | tee /var/www/html/error404.html > /dev/null 2>&1
+
+echo "
+     server {
+	listen 80 default_server;
+	listen [::]:80 default_server;
+
+	root /var/www/html;
+
+	index index.html index.htm;
+
+	location /redirect_me {
+		return 301 www.google.com;
+	}
+
+	location / {
+		# FIRST ATTEMPT TO SERVE REQUEST AS FILE, THEN
+		# as directory, then fall back to displaying a 404.
+		try_files \$uri \$uri/ =404;
+	}
+
+	error_page 404 /error404.html;
+
+	location = /error404.html {
+		 root /var/www/html;
+		 internal;
+	}
+
+}
+" > /etc/nginx/sites-available/default
+
+service nginx restart
