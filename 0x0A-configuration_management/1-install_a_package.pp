@@ -1,3 +1,4 @@
+# install flask app using pip3
 package { 'flask':
   ensure   => 'installed'
   name     => 'flask'
