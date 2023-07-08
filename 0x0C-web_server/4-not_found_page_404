@@ -2,7 +2,7 @@
 # configures a server to rediret a uri and with responce of 301
 # update machine and install nginx
 apt-get update -y > /dev/null 2>&1
-apt-get install nginx -y /dev/null 2>&1
+apt-get install nginx -y > /dev/null 2>&1
 
 # update default html file that comes with nginx
 echo "Hello World!" | tee /var/www/html/index.html > /dev/null 2>&1
