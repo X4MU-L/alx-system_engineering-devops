@@ -19,8 +19,8 @@ printf "\n
 
        backend webservers
        	       balance roundrobin
-       	       server 176203-web-01 52.87.215.172
-	       server 176203-web-02 100.26.231.127
+       	       server 208053-web-01 18.210.33.133
+	       server 208053-web-02 35.174.200.184
 \n" >> /etc/haproxy/haproxy.cfg
 
 service haproxy restart
