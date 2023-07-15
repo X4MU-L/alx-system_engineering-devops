@@ -2,12 +2,9 @@
 # Installs and configures HAProxy.
 
 apt update -y
-# enable dedicated PPA
-apt-get install --no-install-recommends software-properties-common -y
-add-apt-repository ppa:vbernat/haproxy-2.8 -y
 
 # install haproxy
-apt-get install haproxy=2.8.\* -y
+apt install haproxy -y
 
 # Enable HAProxy to start by init script
 printf "\nENABLED=1\n" >> /etc/default/haproxy
