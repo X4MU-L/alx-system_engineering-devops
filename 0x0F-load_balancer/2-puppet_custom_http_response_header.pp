@@ -2,24 +2,27 @@
 
 # update machine
 exec { 'Update':
-  command => '/bin/apt-get update -y',
+  provider => 'shell',
+  command  => 'apt update -y',
 }
 
 # install Nginx
-package { 'Nginx':
+-> package { 'Nginx':
   ensure   => installed,
   name     => 'nginx',
   provider => 'apt',
 }
 
 # create index.html page
-exec { '/var/www/html/index.html':
-  command => '/bin/echo "Hello World!" | /bin/tee /var/www/html/index.html > /dev/null 2>&1',
+-> exec { '/var/www/html/index.html':
+  provider => 'shell',
+  command  => 'echo "Hello World!" | tee /var/www/html/index.html > /dev/null 2>&1',
 }
 
 # configure nginx with a new server block
-exec { 'server block config':
-  command => '/bin/printf %s  "server {
+-> exec { 'server block config':
+  provider => 'shell',
+  command  => 'printf %s  "server {
   listen 80 default_server;
   listen [::]:80 default_server;
 
@@ -38,6 +41,6 @@ exec { 'server block config':
 }
 
 # restart web server
-exec { 'restart':
-  command => '/sbin/service nginx restart',
+-> exec { 'restart':
+  command => '/etc/init.d/nginx restart',
 }
