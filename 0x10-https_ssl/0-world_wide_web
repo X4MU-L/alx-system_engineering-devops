@@ -21,6 +21,8 @@ then
 	echo "$2 $HILL" | \
 	awk '{print "The subdomain "$1" is a "$5" record and points to "$6}'
 else
-	echo "Usage: ${:2} DOMAIN_NAME [SUB_DOMAIN]"
+    H=$0
+    echo "${H::(${#H} - 4)}"
+	echo "Usage: ${0:2} DOMAIN_NAME [SUB_DOMAIN]"
 	exit 1;
 fi
