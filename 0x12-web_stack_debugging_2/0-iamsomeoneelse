@@ -3,9 +3,9 @@
 
 if [ -z "$1" ];
 then
-    echo "Usage: ${0:2} USER";
-    exit 1;
+    whoami
+    exit 0;
 fi
-
 id -un "$1";
 exit 0;
+
