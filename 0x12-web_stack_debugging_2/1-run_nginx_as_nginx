@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# this script will change the owner/group of nginx config files and file mode
+# alter the owner/group of /run/nginx.pid
+# replace linsten on 80 to 8080
+# start nginx server using nginx as user
+
+chown nginx:nginx /etc/nginx/nginx.conf
+chmod 644 /etc/nginx/nginx.conf
+chown nginx:nginx /run/nginx.pid
+sed -i 's/listen 80/listen 8080/g' /etc/nginx/sites-available/default
+sed -i 's.listen \[::\]:80.listen \[::\]:8080.g' /etc/nginx/sites-available/default
+kill "$(pgrep apache2 | head -1)"
+su nginx -c "service nginx restart"
