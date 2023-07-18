@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+# print name of UID of user passed as args
+
 if [ -z "$1" ];
 then
     echo "Usage: ${0:2} USER";
