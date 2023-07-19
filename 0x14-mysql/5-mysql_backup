@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# connect to a mysql dataabase create a dump file
+# archive the file using the date and tar.gz as suffix
+
+if [ -z "$1" ];
+then
+	echo "Usage: ${0:2} MYSQL_PASSWORD"
+	exit 1;
+fi
+
+export MYSQL_PWD="$1";
+mysqldump -uroot --all-databases --result-file=backup.sql
+d="$(date +%d-%m-%y)";
+tar -czvf "$d.tar.gz" backup.sql;
+
