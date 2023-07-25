@@ -25,7 +25,7 @@ if __name__ == "__main__":
             user = json.loads(user_request.read())
         with request.urlopen(f"{url}/todos") as req:
             todos = json.loads(req.read())
-            print("Employee {} is done with tasks({}/{})"
+            print("Employee {} is done with tasks({}/{}):"
                   .format(user["name"], task_done(todos), len(todos)))
             for todo in todos:
                 if todo["completed"]:
