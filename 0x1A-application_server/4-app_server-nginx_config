@@ -1,0 +1,45 @@
+ server {
+        listen 80;
+        listen [::]:80;
+
+	add_header X-Served-By 208053-web-01;
+        root /var/www/html;
+
+        index index.html index.htm;
+
+        location ~* (/redirect_me|/redirect_me/)$ {
+                return 301 www.google.com;
+        }
+
+        location / {
+                # FIRST ATTEMPT TO SERVE REQUEST AS FILE, THEN
+                # as directory, then fall back to displaying a 404.
+                try_files $uri $uri/ =404;
+        }
+
+	location /airbnb-onepage {
+		 proxy_pass  http://127.0.0.1:5000/airbnb-onepage;
+	}
+
+	location ~ /airbnb-dynamic/number_odd_or_even {
+		 rewrite ^/airbnb-dynamic/number_odd_or_even/(\d+)/?$ /number_odd_or_even/$1 break;
+		proxy_pass http://127.0.0.1:5001;
+	}
+
+
+	location /api/ {
+		proxy_pass http://127.0.0.1:5002;
+	}
+	location /hbnb_static {
+		 alias /data/web_static/current;
+		 try_files $uri $uri/ =404;
+		 access_log /data/web_static/current/access_log;
+	}
+
+        error_page 404 /error404.html;
+
+        location = /error404.html {
+                 root /var/www/html;
+                 internal;
+        }
+}
